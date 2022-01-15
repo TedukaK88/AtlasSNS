@@ -1,0 +1,65 @@
+@charset "utf-8";
+html{
+}
+body{
+}
+/* header */
+header{
+    background:#186AC9;
+}
+
+/* main content */
+#row{
+    display: flex;
+    flex-flow: row wrap;
+}
+#container{
+    flex: 0 0 80%;
+}
+#side-bar{
+    flex: 0 0 19%;
+    border-left: 1px solid #727272;
+}
+
+
+/* ↑初期実装↑ */
+/* =============================================== */
+/* ↓追記実装↓ */
+
+/* login.blade */
+#head{
+    display: flex;
+    padding: 1%;
+    justify-content: space-between;
+}
+#menu{
+    display: flex;
+}
+.menu-trigger{
+    padding-left: 20px;
+}
+.menu-trigger span{
+    display: block;
+    position: absolute;
+    border-bottom: solid 3px white;
+}
+.header-name{
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.accordion-menu{
+    display: block;
+    position: absolute;
+    top: 100px;
+    right: 0px;
+}
+.icon{
+    padding-left: 40px;
+}
+.logo{
+    width: auto;
+    height: 60px;
+}
+
+/* index */

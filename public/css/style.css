@@ -44,6 +44,7 @@ header{
     border-bottom: solid 3px white;
 }
 .header-name{
+    padding-top: 8%;
     color: white;
     font-weight: bold;
     font-size: 1.5rem;
@@ -51,8 +52,15 @@ header{
 .accordion-menu{
     display: block;
     position: absolute;
-    top: 100px;
+    top: 90px;
     right: 0px;
+}
+.menu-list{
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 20px 40px 20px 40px;
+    border: 1px rgb(8, 8, 153) solid; /*後で色味調整*/
+    background-color: white;
 }
 .icon{
     padding-left: 40px;

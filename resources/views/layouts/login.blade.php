@@ -33,9 +33,9 @@
                     <img class="icon" src="images/icon1.png">
                 <div>
                 <ul class="accordion-menu">
-                    <li><a href="/top">ホーム</a></li>
-                    <li><a href="/profile">プロフィール</a></li>
-                    <li><a href="/logout">ログアウト</a></li>
+                    <li class="menu-list"><a href="/top">HOME</a></li>
+                    <li class="menu-list"><a href="/profile">プロフィール編集</a></li>
+                    <li class="menu-list"><a href="/logout">ログアウト</a></li>
                 </ul>
             </div>
         </div>
@@ -60,6 +60,7 @@
             </div>
             <p class="btn"><a href="/search">ユーザー検索</a></p>
         </div>
+    </div>
     </div>
     <footer>
     </footer>

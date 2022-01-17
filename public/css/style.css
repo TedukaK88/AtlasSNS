@@ -23,10 +23,18 @@ header{
 
 
 /* ↑初期実装↑ */
-/* =============================================== */
+/* =========================================================================================== */
 /* ↓追記実装↓ */
 
+
+/* ================================================================ */
+/* header,menu */
+/* ================================================================ */
+
 /* login.blade */
+header{
+    height: 12vh;
+}
 #head{
     display: flex;
     padding: 1%;
@@ -35,25 +43,36 @@ header{
 #menu{
     display: flex;
 }
-.menu-trigger{
-    padding-left: 20px;
+
+
+.logo{
+    margin: 1% 1% auto auto;
+    height: 60%;
+    width: auto;
 }
-.menu-trigger span{
-    display: block;
-    position: absolute;
-    border-bottom: solid 3px white;
-}
-.header-name{
-    padding-top: 8%;
+.header-name,.acd-label{
+    padding: 8% 15px 0px 15px;
     color: white;
     font-weight: bold;
     font-size: 1.5rem;
+}
+.acd-trigger{
+    display: none;
+}
+.acd-label{
+    display: block;
 }
 .accordion-menu{
     display: block;
     position: absolute;
     top: 90px;
     right: 0px;
+    transition: 0.5s;
+    visibility: hidden;
+}
+.acd-trigger:checked + .acd-label + .accordion-menu{
+    height: 40px;
+    visibility: visible;
 }
 .menu-list{
     font-size: 2.5rem;
@@ -63,11 +82,19 @@ header{
     background-color: white;
 }
 .icon{
-    padding-left: 40px;
-}
-.logo{
-    width: auto;
-    height: 60px;
+    padding: 0 15px 0 30px;
 }
 
+
+/* ================================================================ */
+/* sidebar */
+/* ================================================================ */
+
+.sb-container{
+    display: flex;
+}
+
+/* ================================================================ */
 /* index */
+/* ================================================================ */
+

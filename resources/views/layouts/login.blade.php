@@ -26,17 +26,15 @@
             <div id = "">
                 <div id = "menu">
                     <p class="header-name">〇〇　さん</p>
-                    <div class="menu-trigger">
-                        <span>＿</span>
-                        <span>＿</span>
-                    </div>
-                    <img class="icon" src="images/icon1.png">
-                <div>
+                    <input id="acd-trigger1" class="acd-trigger" type="checkbox">
+                    <label class="acd-label" for="acd-trigger1">∧</label>
                 <ul class="accordion-menu">
                     <li class="menu-list"><a href="/top">HOME</a></li>
                     <li class="menu-list"><a href="/profile">プロフィール編集</a></li>
                     <li class="menu-list"><a href="/logout">ログアウト</a></li>
                 </ul>
+                    <img class="icon" src="images/icon1.png">
+                <div>
             </div>
         </div>
     </header>
@@ -47,18 +45,18 @@
         <div id="side-bar">
             <div id="confirm">
                 <p>〇〇さんの</p>
-                <div></div>
+                <div class="sb-container">
                 <p>フォロー数</p>
                 <p>〇〇名</p>
                 </div>
                 <p class="btn"><a href="/follow-list">フォローリスト</a></p>
-                <div>
+                <div class="sb-container">
                 <p>フォロワー数</p>
                 <p>〇〇名</p>
                 </div>
                 <p class="btn"><a href="/follower-list">フォロワーリスト</a></p>
+                <p class="btn"><a href="/search">ユーザー検索</a></p>
             </div>
-            <p class="btn"><a href="/search">ユーザー検索</a></p>
         </div>
     </div>
     </div>

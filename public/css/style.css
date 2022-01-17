@@ -33,11 +33,12 @@ header{
 
 /* login.blade */
 header{
-    height: 12vh;
+    /* padding: 0 10px 0 10px; */
 }
 #head{
     display: flex;
-    padding: 1%;
+    height: 50px;
+    padding:  30px 30px 30px 30px;
     justify-content: space-between;
 }
 #menu{
@@ -46,9 +47,8 @@ header{
 
 
 .logo{
-    margin: 1% 1% auto auto;
-    height: 60%;
-    width: auto;
+    height: 100%;
+    /* object-fit: contain; */
 }
 .header-name,.acd-label{
     padding: 8% 15px 0px 15px;
@@ -65,7 +65,7 @@ header{
 .accordion-menu{
     display: block;
     position: absolute;
-    top: 90px;
+    top: 110px;
     right: 0px;
     transition: 0.5s;
     visibility: hidden;
@@ -75,11 +75,22 @@ header{
     visibility: visible;
 }
 .menu-list{
-    font-size: 2.5rem;
+    font-size: 2.0rem;
+    letter-spacing: 0.1rem;
     text-align: center;
-    padding: 20px 40px 20px 40px;
-    border: 1px rgb(8, 8, 153) solid; /*後で色味調整*/
+    padding: 30px 60px 30px 60px;
+    border: 1px rgb(30, 30, 140) solid; /*後で色味調整*/
     background-color: white;
+}
+.menu-list a{
+    color: grey;
+}
+.menu-list:nth-child(2n){
+    color: white;
+    background-color: rgb(30, 30, 140);
+}
+.menu-list:nth-child(2n) a{
+    color: white;
 }
 .icon{
     padding: 0 15px 0 30px;

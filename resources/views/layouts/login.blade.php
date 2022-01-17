@@ -27,7 +27,7 @@
                 <div id = "menu">
                     <p class="header-name">〇〇　さん</p>
                     <input id="acd-trigger1" class="acd-trigger" type="checkbox">
-                    <label class="acd-label" for="acd-trigger1">∧</label>
+                    <label class="acd-label" for="acd-trigger1">∨</label>
                 <ul class="accordion-menu">
                     <li class="menu-list"><a href="/top">HOME</a></li>
                     <li class="menu-list"><a href="/profile">プロフィール編集</a></li>

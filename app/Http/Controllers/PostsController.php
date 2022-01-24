@@ -6,7 +6,12 @@ use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
-    //
+    // //register
+    // public function register(){
+    //     return view('auth.register');
+    // }
+
+    //home
     public function home(){
         return view('auth.login');
     }
@@ -24,5 +29,4 @@ class PostsController extends Controller
     public function followerList(){
         return view('posts.follower-list');
     }
-
 }

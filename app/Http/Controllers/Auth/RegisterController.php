@@ -78,9 +78,11 @@ class RegisterController extends Controller
     public function register(Request $request){
         if($request->isMethod('post')){
             $data = $request->input();
+            $name = $request->username;
+            // DD($name);
 
             $this->create($data);
-            return redirect('added');
+            return view('auth.added',['name'=>$name]);
         }
         return view('auth.register');
     }

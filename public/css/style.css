@@ -25,6 +25,12 @@ header{
 /* ↑初期実装↑ */
 /* =========================================================================================== */
 /* ↓追記実装↓ */
+/* ================================================================ */
+/* 共通項 */
+/* ================================================================ */
+body{
+    font-size: 1rem;
+}
 
 
 /* ================================================================ */
@@ -110,31 +116,65 @@ header{
 /* ================================================================ */
 /* 投稿フォーム */
 .container{
-    background-color: grey;
+    /* background-color: grey; */
 }
 .post-container{
     display: flex;
+    height: 12.5vh;
     width: 86%;
     padding: 3% 7% 3% 7%;
     background-color: white;
+}
+.post-container form{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 3%;
+    width: 100%;
+    /* background-color: grey; */
 }
 .prof-icon{
     height: 65px;
     width: 65px;
 }
-.form-control{
-    border: none;
-}
 .post-form{
     display: flex;
-    height: 120px;
-    width: 800px;
+    width: 100%;
+    align-items: flex-end;
+    vertical-align: top;
 }
-.post-button{
+input{
+}
+.form-control{
+    border: none;
+    height: 100%;
+    width: 100%;
+    vertical-align: top;
+}
+
+/* -----button CSSリセット------------------------------ */
+button {
     height: 60px;
-    width: 60px;
+    width: auto;
+    padding:0;
+    margin:0;
+    background:none;
+    border:0;
+    font-size:0;
+    line-height:0;
+    overflow:visible;
+    cursor:pointer;
+}
+  button img {
+    display: block;
+  }
+/* ----------------------------------- */
+
+.post-button{
 }
 .post-button img{
-    height: 60px;
-    width: 60px;
+    margin: 0%;
+    height: 100%;
+    width: 100%;
 }
+
+

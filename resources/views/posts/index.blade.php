@@ -14,7 +14,7 @@
     <div>
         <table>
             <tr>
-                <div class="">
+                <div class="post-table">
                   <td><img src="images/icon1.png"></td>
 
                   <div class="">

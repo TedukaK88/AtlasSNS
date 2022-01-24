@@ -52,3 +52,6 @@ Route::get('/home','PostsController@home');
 //logout
 Route::get('/logout','Auth\LoginController@logout');
 
+//newPost
+Route::post('/post','PostsController@postCreate');
+

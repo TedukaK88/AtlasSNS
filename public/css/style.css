@@ -108,4 +108,33 @@ header{
 /* ================================================================ */
 /* index */
 /* ================================================================ */
-
+/* 投稿フォーム */
+.container{
+    background-color: grey;
+}
+.post-container{
+    display: flex;
+    width: 86%;
+    padding: 3% 7% 3% 7%;
+    background-color: white;
+}
+.prof-icon{
+    height: 65px;
+    width: 65px;
+}
+.form-control{
+    border: none;
+}
+.post-form{
+    display: flex;
+    height: 120px;
+    width: 800px;
+}
+.post-button{
+    height: 60px;
+    width: 60px;
+}
+.post-button img{
+    height: 60px;
+    width: 60px;
+}

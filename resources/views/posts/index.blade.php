@@ -2,8 +2,14 @@
 
 @section('content')
 <div class="container">
-    <div>
-    <p>つぶやき投稿フォーム</p>
+    <div class="post-container"> <!--class名仮置き-->
+      <img src="images/icon1.png" class="prof-icon">
+      {!! Form::open(['url' => 'post']) !!}
+      <div class="post-form"> <!--class仮置き-->
+        {!! Form::input('text','newPost',null,['required','class'=>'form-control','placeholder'=>'投稿内容を入力してください。']) !!}
+        <button type="submit" class="post-button"><img src="images/post.png"></button>
+      </div>
+      {!! Form::close() !!}
     </div>
     <div>
         <table>

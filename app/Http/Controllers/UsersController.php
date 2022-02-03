@@ -8,10 +8,12 @@ class UsersController extends Controller
 {
     //
     public function profile(){
-        return view('users.profile');
+        $user = auth()->user();
+        return view('users.profile',['user'=>$user]);
     }
     public function search(){
-        return view('users.search');
+        $user = auth()->user();
+        return view('users.search',['user'=>$user]);
     }
 
     //logout

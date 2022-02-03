@@ -32,5 +32,6 @@
         </table>
     </div>
 </div>
+<p>ID:{{$user["id"]}}</p>
 
 @endsection

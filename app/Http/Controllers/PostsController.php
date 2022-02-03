@@ -18,22 +18,26 @@ class PostsController extends Controller
     }
 
     public function index(){
-        return view('posts.index');
+        $user = auth()->user();
+        return view('posts.index',['user'=>$user]);
     }
 
 
     public function followList(){
-        return view('posts.follow-list');
+        $user = auth()->user();
+        return view('posts.follow-list',['user'=>$user]);
     }
 
 
     public function followerList(){
-        return view('posts.follower-list');
+        $user = auth()->user();
+        return view('posts.follower-list',['user'=>$user]);
     }
 
     //post　新規登録処理
     public function postCreate(Request $request){
-        $user_id = 1;  //ユーザーID機能未実装につき仮ID設定中
+        $user_id = auth()->id();
+        // $user_id = 1;  //ユーザーID機能未実装につき仮ID設定中
         $post = $request->input('newPost');
         \DB::table('posts')->insert([
             'user_id' => $user_id,  //現在仮ID登録中。ログインユーザーのIDを取得し代入すること。

@@ -25,7 +25,7 @@
         <h1><a href="/top"><img src="images/atlas.png" class="logo"></a></h1>
             <div id = "">
                 <div id = "menu">
-                    <p class="header-name">〇〇　さん</p>
+                    <p class="header-name">{{$user["username"]}}　さん</p>
                     <input id="acd-trigger1" class="acd-trigger" type="checkbox">
                     <label class="acd-label" for="acd-trigger1">∨</label>
                 <ul class="accordion-menu">
@@ -44,7 +44,7 @@
         </div >
         <div id="side-bar">
             <div id="confirm">
-                <p>〇〇さんの</p>
+                <p>{{$user["username"]}}さんの</p>
                 <div class="sb-container">
                 <p>フォロー数</p>
                 <p>〇〇名</p>
@@ -61,6 +61,7 @@
     </div>
     </div>
     <footer>
+        <p>user:{{$user["username"]}}</p>
     </footer>
     <script src="JavaScriptファイルのURL"></script>
     <script src="JavaScriptファイルのURL"></script>

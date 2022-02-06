@@ -55,3 +55,10 @@ Route::get('/logout','Auth\LoginController@logout');
 //newPost
 Route::post('/post','PostsController@postCreate');
 
+//follow user
+Route::get('/f_user','UsersController@f_user');
+//follow cancel
+Route::get('/f_cancel_user','UsersController@f_cancel_user');
+//search_result
+Route::get('/search_result','UsersController@search_result');
+

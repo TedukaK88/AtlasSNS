@@ -152,7 +152,7 @@ input{
 }
 
 /* -----button CSSリセット------------------------------ */
-button {
+.post-button {
     height: 60px;
     width: auto;
     padding:0;
@@ -178,3 +178,21 @@ button {
 }
 
 
+/* ================================================================ */
+/* search */
+/* ================================================================ */
+.search-container{
+    display: flex;
+}
+
+.search-button{
+    color: white;
+    background-color: cornflowerblue;
+}
+
+.search-table{
+    display: block;
+}
+.search-list{
+    display: inline-block;
+}

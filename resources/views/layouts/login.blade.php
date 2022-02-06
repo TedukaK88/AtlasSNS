@@ -61,7 +61,8 @@
     </div>
     </div>
     <footer>
-        <p>user:{{$user["username"]}}</p>
+        <p>user_id：{{$user["id"]}}</p><br>
+        <p>user：{{$user["username"]}}</p>
     </footer>
     <script src="JavaScriptファイルのURL"></script>
     <script src="JavaScriptファイルのURL"></script>

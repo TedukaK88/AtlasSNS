@@ -19,7 +19,9 @@ class PostsController extends Controller
 
     public function index(){
         $user = auth()->user();
-        return view('posts.index',['user'=>$user]);
+        $following = \DB::table('follows')->select('following_id')->where('followed_id',$user["id"])->pluck('following_id');
+        $followed = \DB::table('follows')->select('followed_id')->where('following_id',$user["id"])->pluck('followed_id');
+        return view('posts.index',compact('user','following','followed'));
     }
 
 

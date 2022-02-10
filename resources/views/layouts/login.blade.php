@@ -47,12 +47,16 @@
                 <p>{{$user["username"]}}さんの</p>
                 <div class="sb-container">
                 <p>フォロー数</p>
-                <p>〇〇名</p>
+                <?php  //フォロー・フォロワー人数計算用
+                $following_cnt = count($following);
+                $followed_cnt = count($followed);
+                ?>
+                <p>{{$following_cnt}}名</p>
                 </div>
                 <p class="btn"><a href="/follow-list">フォローリスト</a></p>
                 <div class="sb-container">
                 <p>フォロワー数</p>
-                <p>〇〇名</p>
+                <p>{{$followed_cnt}}名</p>
                 </div>
                 <p class="btn"><a href="/follower-list">フォロワーリスト</a></p>
                 <p class="btn"><a href="/search">ユーザー検索</a></p>
@@ -63,6 +67,8 @@
     <footer>
         <p>user_id：{{$user["id"]}}</p><br>
         <p>user：{{$user["username"]}}</p>
+        <p>following：{{$following}}</p>
+        <p>followed：{{$followed}}</p>
     </footer>
     <script src="JavaScriptファイルのURL"></script>
     <script src="JavaScriptファイルのURL"></script>

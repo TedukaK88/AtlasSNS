@@ -12,23 +12,27 @@ class UsersController extends Controller
         return view('users.profile',['user'=>$user]);
     }
     public function search(){
-        $user = auth()->user(); //ログイン中のユーザー取得
+        $user = auth()->user();
+        $following = \DB::table('follows')->select('following_id')->where('followed_id',$user["id"])->pluck('following_id');
+        $followed = \DB::table('follows')->select('followed_id')->where('following_id',$user["id"])->pluck('followed_id');
         $users = \DB::table('users')->where('id','<>',$user["id"])->get(); //ログイン中のユーザー以外のユーザー取得
-        $keyword = array("none");
-        // $follows = \DB::table('follows')->where('followed_id',$user["id"])->get(); フォローボタンの表示非表示の為のDB取得を考え中。。。
+        $follows = \DB::table('follows')->select('following_id')->where('followed_id',$user["id"])->get();
 
-        return view('users.search',['user'=>$user],['users'=>$users],['follows'=>$follows])->with('keyword','none');
+        return view('users.search',compact("user",'following','followed',"users","follows"));
     }
 
     public function search_result(Request $request){
         $keyword = $request->input('keyword'); //検索ワードの取得
-        $user = auth()->user(); //ログイン中のユーザー取得
+        $user = auth()->user();
+        $following = \DB::table('follows')->select('following_id')->where('followed_id',$user["id"])->pluck('following_id');
+        $followed = \DB::table('follows')->select('followed_id')->where('following_id',$user["id"])->pluck('followed_id');
         $users = \DB::table('users') //table指定
         ->where('id','<>',$user["id"]) //ログイン中のユーザー以外
         ->where('username','like',"%$keyword%") //検索ワードあいまい検索
         ->get();
+        $follows = \DB::table('follows')->where('followed_id',$user["id"])->get();
 
-        return view('users.search',['user'=>$user],['users'=>$users])->with('keyword',$keyword);
+        return view('users.search',compact("user",'following','followed',"users","follows"))->with('keyword',$keyword);
     }
 
     //ユーザーのフォロー処理

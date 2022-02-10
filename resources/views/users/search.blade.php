@@ -9,7 +9,7 @@
             <!-- <button type="submit" class="search-button"></button> -->
             <input type="submit" value="🔍">
         </form>
-        <?php if($keyword <> "none"){
+        <?php if(isset($keyword)){
         echo '<p>検索ワード：';
         echo $keyword;
         echo '</p>'; }?>
@@ -35,6 +35,11 @@
 foreach ($users as $list) {
     echo $list->id;
     echo $list->username;
+}
+if(isset($follows)){
+    echo $follows;
+}else{
+    echo "none";
 }
 ?>
 

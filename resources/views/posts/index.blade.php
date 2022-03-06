@@ -26,10 +26,12 @@
 
                   <td>{{$post->post}}</td>
 
-                  <div class="">
-                    <td><a href=""><img src="images/edit.png"></a></td>
-                    <td><a href="/top/{{$post->id}}/delete" onclick="return confirm('この投稿を削除してよろしいですか？')"><img src="images/trash.png"></a></td>
-                  </div>
+                  <?php if($post->user_id = $user->id){
+                  echo '<div class="">';
+                  echo '<td><a href=""><img src="images/edit.png"></a></td>';
+                  echo '<td><a href="/top/{'.$post->id.'}/delete" onclick="return confirm("この投稿を削除してよろしいですか？")"><img src="images/trash.png"></a></td>';
+                  echo '</div>';
+                  }?>
                 </div>
             </tr>
             @endforeach
@@ -43,7 +45,8 @@
 <p>posts:</p>
 <?php
 foreach ($posts as $list) {
-    echo $list->post;
+  echo '<p>user_id:'.$list->user_id.'</p>';
+    echo '<p>post:['.$list->post.']</p><br>';
 }
 ?>
 @endsection

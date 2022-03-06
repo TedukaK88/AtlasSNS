@@ -40,12 +40,10 @@ class UsersController extends Controller
         $f_user = $request->input('f_user');
         $user = auth()->user(); //ログイン中のユーザー取得
         \DB::table('follows')->insert([
-            'following_id' => $user["id"],
-            'followed_id' => $f_user
+            'following_id' => $f_user,
+            'followed_id' => $user["id"]
         ]);
-        $users = \DB::table('users')->where('id','<>',$user["id"])->get(); //ログイン中のユーザー以外のユーザー取得
-
-        return view('users.search',['user'=>$user],['users'=>$users]);
+        return redirect('search');
     }
         //ユーザーのフォロー解除処理
         public function f_cancel_user (Request $request){
@@ -55,9 +53,7 @@ class UsersController extends Controller
                 'following_id' => $user["id"],
                 'followed_id' => $f_cancel_user
             ])->delete();
-            $users = \DB::table('users')->where('id','<>',$user["id"])->get(); //ログイン中のユーザー以外のユーザー取得
-
-            return view('users.search',['user'=>$user],['users'=>$users]);
+            return redirect('search');
         }
 
 

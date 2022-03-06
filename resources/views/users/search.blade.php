@@ -26,11 +26,6 @@
                 <form action="/f_cancel_user" method="get">
                 <td><button type="submit" id="f_cancel_user" name="f_cancel_user" class="follow-cancel-button" value="{{$list->id}}" onclick="return confirm('フォローを解除してよろしいですか？')">フォロー解除</button></td>
                 </form>
-                <?php
-                if(in_array($list->id,$following)){
-                    echo '<p>存在する</p>';
-                }
-                ?>
             </tr>
             @endforeach
         </table>

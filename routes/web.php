@@ -46,7 +46,7 @@ Route::get('/search','UsersController@search');
 Route::get('/follow-list','PostsController@followList');
 Route::get('/follower-list','PostsController@followerList');
 
-//add
+//add code ==============================================================
 Route::get('/home','PostsController@home');
 
 //logout
@@ -54,6 +54,8 @@ Route::get('/logout','Auth\LoginController@logout');
 
 //newPost
 Route::post('/post','PostsController@postCreate');
+//deletePost
+Route::get('/top/{id}/delete','PostsController@postDelete');
 
 //follow user
 Route::get('/f_user','UsersController@f_user');

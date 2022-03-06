@@ -28,7 +28,7 @@
 
                   <div class="">
                     <td><a href=""><img src="images/edit.png"></a></td>
-                    <td><a href="" onclick="return confirm('この投稿を削除してよろしいですか？')"><img src="images/trash.png"></a></td>
+                    <td><a href="/top/{{$post->id}}/delete" onclick="return confirm('この投稿を削除してよろしいですか？')"><img src="images/trash.png"></a></td>
                   </div>
                 </div>
             </tr>

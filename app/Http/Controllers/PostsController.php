@@ -22,7 +22,7 @@ class PostsController extends Controller
         $following = \DB::table('follows')->select('following_id')->where('followed_id',$user["id"])->pluck('following_id');
         $followed = \DB::table('follows')->select('followed_id')->where('following_id',$user["id"])->pluck('followed_id');
 
-        $posts = \DB::table('posts')->select('user_id','post','posts.updated_at','username','images')
+        $posts = \DB::table('posts')->select('posts.id','user_id','post','posts.updated_at','username','images')
         ->join('users','posts.user_id','=','users.id') //join(table,column,=,column)
         ->where('user_id',$user["id"],)
         ->orWhere('user_id',[$following])
@@ -30,7 +30,13 @@ class PostsController extends Controller
         return view('posts.index',compact('user','following','followed','posts'));
     }
 
-    public function postDelete(){}
+    public function postDelete($id){
+        \DB::table('posts')
+        ->where('id',$id)
+        ->delete();
+
+        return redirect('top');
+    }
 
     public function postUpdate(){}
 

@@ -64,7 +64,7 @@
         </div>
     </div>
     </div>
-    <footer>
+    <footer>　<!-- 確認用 -->
         <p>user_id：{{$user["id"]}}</p><br>
         <p>user：{{$user["username"]}}</p>
         <p>following：{{$following}}</p>

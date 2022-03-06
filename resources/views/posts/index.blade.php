@@ -13,15 +13,18 @@
     </div>
     <div>
         <table>
+        @foreach($posts as $post)
             <tr>
                 <div class="post-table">
-                  <td><img src="images/icon1.png"></td>
+                  <td><img src="images/icon1.png">
 
                   <div class="">
-                      <td>name</td>
-                      <td>日時</td>
-                    <td>内容</td>
+                      <td>{{$post->username}}</td>
+                      <td>{{$post->updated_at}}</td>
                   </div>
+                  </td>
+
+                  <td>{{$post->post}}</td>
 
                   <div class="">
                     <td><a href=""><img src="images/edit.png"></a></td>
@@ -29,9 +32,18 @@
                   </div>
                 </div>
             </tr>
+            @endforeach
         </table>
     </div>
 </div>
-<p>ID:{{$user["id"]}}</p>
 
+<!-- =============確認用============== -->
+<p>ID:{{$user["id"]}}</p>
+<br>
+<p>posts:</p>
+<?php
+foreach ($posts as $list) {
+    echo $list->post;
+}
+?>
 @endsection

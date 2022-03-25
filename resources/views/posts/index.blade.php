@@ -19,6 +19,8 @@
                   <td><img src="images/icon1.png">
 
                   <div class="">
+                      <td>id:{{$post->id}} </td><!-- 検証用 postID確認 -->
+                      <td>user_id:{{$post->user_id}} </td><!-- 検証用 -->
                       <td>{{$post->username}}</td>
                       <td>{{$post->updated_at}}</td>
                   </div>
@@ -26,12 +28,12 @@
 
                   <td>{{$post->post}}</td>
 
-                  <?php if($post->user_id = $user->id){
-                  echo '<div class="">';
-                  echo '<td><a href=""><img src="images/edit.png"></a></td>';
-                  echo '<td><a href="/top/{'.$post->id.'}/delete" onclick="return confirm("この投稿を削除してよろしいですか？")"><img src="images/trash.png"></a></td>';
-                  echo '</div>';
-                  }?>
+                  @if($post->user_id === $user->id) <!-- post本人かチェック ※$user　は Controller で ログインユーザー１人のみの配列 として作成してある-->
+                  <div class="">
+                    <td><a href=""><img src="images/edit.png"></a></td>
+                    <td><a href="/top/{{$post->id}}/delete" onclick="return confirm('この投稿を削除してよろしいですか？')"><img src="images/trash.png"></a></td>
+                  </div>
+                  @endif
                 </div>
             </tr>
             @endforeach
@@ -45,8 +47,9 @@
 <p>posts:</p>
 <?php
 foreach ($posts as $list) {
-  echo '<p>user_id:'.$list->user_id.'</p>';
-    echo '<p>post:['.$list->post.']</p><br>';
+    echo $list->post;
 }
+echo '<br>ログインユーザー：'.$user;
+echo '<br>post_array：'.$posts;
 ?>
 @endsection

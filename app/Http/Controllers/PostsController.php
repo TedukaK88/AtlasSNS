@@ -22,11 +22,12 @@ class PostsController extends Controller
         $following = \DB::table('follows')->select('following_id')->where('followed_id',$user["id"])->pluck('following_id');
         $followed = \DB::table('follows')->select('followed_id')->where('following_id',$user["id"])->pluck('followed_id');
 
-        $posts = \DB::table('posts')->select('posts.id','posts.user_id','post','posts.updated_at','username','images')
+        $posts = \DB::table('posts')->select('posts.id','user_id','post','posts.updated_at','username','images')
         ->join('users','posts.user_id','=','users.id') //join(table,column,=,column)
-        ->where('user_id',$user["id"],)
-        ->orWhere('user_id',[$following])
+        ->where('user_id',$user["id"])
+        ->orwhereIn('user_id',$following)
         ->get();
+
         return view('posts.index',compact('user','following','followed','posts'));
     }
 
@@ -38,18 +39,7 @@ class PostsController extends Controller
         return redirect('top');
     }
 
-    public function postUpdate(Request $request)
-    {
-        $id = $request->input('id');
-        $up_post = $request->input('upPost');
-        \DB::table('posts')
-        ->where('id',$id)
-        ->update(
-            ['post' => $up_post]
-        );
-
-        return redirect('top');
-    }
+    public function postUpdate(){}
 
 
     public function followList(){

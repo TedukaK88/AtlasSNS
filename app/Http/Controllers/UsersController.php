@@ -50,8 +50,8 @@ class UsersController extends Controller
             $f_cancel_user = $request->input('f_cancel_user');
             $user = auth()->user(); //ログイン中のユーザー取得
             \DB::table('follows')->where([
-                'following_id' => $user["id"],
-                'followed_id' => $f_cancel_user
+                'following_id' => $f_cancel_user,
+                'followed_id' => $user["id"]
             ])->delete();
             return redirect('search');
         }

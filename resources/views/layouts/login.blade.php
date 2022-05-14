@@ -53,13 +53,13 @@
                 ?>
                 <p>{{$following_cnt}}名</p>
                 </div>
-                <p class="btn"><a href="/follow-list">フォローリスト</a></p>
+                <p class="btn text-button"><a href="/follow-list">フォローリスト</a></p>
                 <div class="sb-container">
                 <p>フォロワー数</p>
                 <p>{{$followed_cnt}}名</p>
                 </div>
-                <p class="btn"><a href="/follower-list">フォロワーリスト</a></p>
-                <p class="btn"><a href="/search">ユーザー検索</a></p>
+                <p class="btn text-button"><a href="/follower-list">フォロワーリスト</a></p>
+                <p class="btn text-button"><a href="/search">ユーザー検索</a></p>
             </div>
         </div>
     </div>
@@ -70,7 +70,7 @@
         <p>following：{{$following}}</p>
         <p>followed：{{$followed}}</p>
     </footer>
-    <script src="JavaScriptファイルのURL"></script>
-    <script src="JavaScriptファイルのURL"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ asset('js/script.js') }} "></script>
 </body>
 </html>

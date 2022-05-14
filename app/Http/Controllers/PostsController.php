@@ -24,8 +24,9 @@ class PostsController extends Controller
 
         $posts = \DB::table('posts')->select('posts.id','user_id','post','posts.updated_at','username','images')
         ->join('users','posts.user_id','=','users.id') //join(table,column,=,column)
-        ->where('user_id',$user["id"])
-        ->orwhereIn('user_id',$following)
+        ->where('user_id',$user["id"])   //ログインユーザーのつぶやき取得
+        ->orwhereIn('user_id',$following)   //フォローユーザーのつぶやき取得
+        ->orderBy('updated_at','DESC')    //つぶやきの更新が新しい順でソート
         ->get();
 
         return view('posts.index',compact('user','following','followed','posts'));
@@ -39,7 +40,17 @@ class PostsController extends Controller
         return redirect('top');
     }
 
-    public function postUpdate(){}
+    public function postUpdate(Request $request){
+        $id = $request->input('id');
+        $up_post = $request->input('upPost');
+        \DB::table('posts')
+        ->where('id',$id)
+        ->update(
+            ['post' => $up_post]
+        );
+
+        return redirect('top');
+    }
 
 
     public function followList(){

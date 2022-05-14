@@ -46,17 +46,26 @@ Route::get('/search','UsersController@search');
 Route::get('/follow-list','PostsController@followList');
 Route::get('/follower-list','PostsController@followerList');
 
-//add code ==============================================================
-Route::get('/home','PostsController@home');
 
+//=======================================================================
+//===============  add code  ============================================
+//=======================================================================
+
+//=== general ===========================================================
+Route::get('/home','PostsController@home');
 //logout
 Route::get('/logout','Auth\LoginController@logout');
 
+
+//=== top ===============================================================
 //newPost
 Route::post('/post','PostsController@postCreate');
+//updatePost
+Route::post('/top/update','PostsController@postUpdate');
 //deletePost
 Route::get('/top/{id}/delete','PostsController@postDelete');
 
+//=== follow ============================================================
 //follow user
 Route::get('/f_user','UsersController@f_user');
 //follow cancel
@@ -64,3 +73,6 @@ Route::get('/f_cancel_user','UsersController@f_cancel_user');
 //search_result
 Route::get('/search_result','UsersController@search_result');
 
+//=== follow ============================================================
+//profile update
+Route::post('/profile/update','UsersController@prof_update');

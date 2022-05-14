@@ -3,14 +3,49 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Validator;
 
 class UsersController extends Controller
 {
-    //
+    //プロフィール関連
     public function profile(){
         $user = auth()->user();
-        return view('users.profile',['user'=>$user]);
+        $following = \DB::table('follows')->select('following_id')->where('followed_id',$user["id"])->pluck('following_id');
+        $followed = \DB::table('follows')->select('followed_id')->where('following_id',$user["id"])->pluck('followed_id');
+
+        return view('users.profile',compact("user",'following','followed'));
     }
+
+    public function prof_update(Request $request){
+        $rules = [
+            'username' => 'required|string|max:255',
+            'mail' => 'required|string|email|max:255',
+            'password' => 'required|string|min:4|confirmed',
+            'bio' => 'max:150'
+        ];
+        $validator = Validator::make($request->all(),$rules);
+
+        if($validator->fails()){
+            dd($request);
+            return redirect('/profile')
+            ->withErrors($validator) // Validatorインスタンスの値を$errorsへ保存
+            ->withInput(); // 送信されたフォームの値をInput::old()へ引き継ぐ
+        }else{
+        $id = $request->input('id');
+        $username = $request->input('username');
+        $mail = $request->input('mail');
+        $password = bcrypt($request['password']);
+        $bio = $request->input('bio');
+        \DB::table('users')
+        ->where('id',$id)
+        ->update(
+            ['username' => $username,'mail' => $mail,'password' => $password,'bio' => $bio]
+        );
+        return redirect('profile');
+        }
+    }
+
+    //ユーザー検索関連
     public function search(){
         $user = auth()->user();
         $following = \DB::table('follows')->select('following_id')->where('followed_id',$user["id"])->pluck('following_id');

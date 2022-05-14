@@ -31,6 +31,21 @@ header{
 body{
     font-size: 1rem;
 }
+.text-button{
+    width: 200px;
+    height: 45px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 45px;
+    color: white;
+    background-color: #186AC9;
+    border: 2px solid #186AC9;
+    border-radius: 8px 8px 8px 8px;
+}
+.text-button a:link,.text-button a:visited{
+    color: white;
+}
 
 
 /* ================================================================ */
@@ -140,7 +155,9 @@ header{
     display: flex;
     width: 100%;
     align-items: flex-end;
-    vertical-align: top;
+    resize: none;
+    border: none;
+    font-size: 1.5rem;
 }
 input{
 }
@@ -148,7 +165,6 @@ input{
     border: none;
     height: 100%;
     width: 100%;
-    vertical-align: top;
 }
 
 /* -----button CSSリセット------------------------------ */
@@ -167,8 +183,7 @@ input{
   button img {
     display: block;
   }
-/* ----------------------------------- */
-
+/* -------  ボタン  ---------------------------- */
 .post-button{
 }
 .post-button img{
@@ -176,6 +191,80 @@ input{
     height: 100%;
     width: 100%;
 }
+.icon-bg{
+    height: 70px;
+    width: 70px;
+    position: relative;
+    border: solid 0.5rem white;
+    border-radius: 15px 15px 15px 15px;
+}
+.delete-icon-bg{
+    background-color: red;
+}
+.post-icon{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%,-50%);
+}
+.delete-icon{
+    filter: brightness(10);
+}
+/*------  アップデートフォーム  --------------------------*/
+.update-form{
+    display: flex;
+    position: relative;
+    resize: none;
+    width: 1025px;
+    height: 240px;
+    font-size: 1.2rem;
+    border: 2px solid rgb(150, 150, 150);
+    top: -10%;
+}
+.update-button{
+    display: flex;
+    position: absolute;
+    left: 88%;
+    bottom: 8%;
+}
+/*------  モーダル機能  --------------------------*/
+.modal-main{
+    display: none;
+}
+.modalClose{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 2;
+}
+.modal-inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1150px;
+    height: 420px;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 3;
+}
+.inner-content{
+    display: flex;
+}
+
 
 
 /* ================================================================ */
@@ -195,4 +284,41 @@ input{
 }
 .search-list{
     display: inline-block;
+}
+
+
+/* ================================================================ */
+/* profile */
+/* ================================================================ */
+.prof-container{
+    padding-top: 5%;
+    padding-left: 17.5%;
+}
+.prof-list{
+}
+.prof-item{
+    display: flex;
+}
+.prof-item p{
+    width: 300px;
+    padding-top: 20px;
+    padding-bottom: 60px;
+    font-size: 1.8rem;
+    padding-right: 20px;
+    text-align: left;
+}
+.prof-form{
+    resize: none;
+    border: 1px solid rgb(50,50,50);
+    background-color: rgb(240,240,240);
+    height: 2.6rem;
+    width: 500px;
+    font-size: 1.5rem;
+    line-height: 170%;
+}
+.prof-submit{
+    position: absolute;
+    left: 30%;
+    background-color: #FF3355;
+    border: 2px solid #FF3355;
 }

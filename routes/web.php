@@ -38,8 +38,9 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 //ログイン中のページ
 Route::get('/top','PostsController@index');
+Route::get('/post/index','PostsController@index');
 
-Route::get('/profile','UsersController@profile');
+Route::get('/profile/{id}','UsersController@profile');
 
 Route::get('/search','UsersController@search');
 
@@ -61,9 +62,9 @@ Route::get('/logout','Auth\LoginController@logout');
 //newPost
 Route::post('/post','PostsController@postCreate');
 //updatePost
-Route::post('/top/update','PostsController@postUpdate');
+Route::post('/post/index/update','PostsController@postUpdate');
 //deletePost
-Route::get('/top/{id}/delete','PostsController@postDelete');
+Route::get('/post/index/{id}/delete','PostsController@postDelete');
 
 //=== follow ============================================================
 //follow user
@@ -76,3 +77,4 @@ Route::get('/search_result','UsersController@search_result');
 //=== follow ============================================================
 //profile update
 Route::post('/profile/update','UsersController@prof_update');
+

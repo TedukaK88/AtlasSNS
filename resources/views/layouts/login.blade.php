@@ -22,18 +22,18 @@
 <body>
     <header>
         <div id = "head">
-        <h1><a href="/top"><img src="images/atlas.png" class="logo"></a></h1>
+        <h1><a href="/post/index"><img src="/images/atlas.png" class="logo"></a></h1>
             <div id = "">
                 <div id = "menu">
                     <p class="header-name">{{$user["username"]}}　さん</p>
                     <input id="acd-trigger1" class="acd-trigger" type="checkbox">
                     <label class="acd-label" for="acd-trigger1">∨</label>
                 <ul class="accordion-menu">
-                    <li class="menu-list"><a href="/top">HOME</a></li>
-                    <li class="menu-list"><a href="/profile">プロフィール編集</a></li>
+                    <li class="menu-list"><a href="/post/index">HOME</a></li>
+                    <li class="menu-list"><a href="/profile/{{$user->id}}">プロフィール編集</a></li>
                     <li class="menu-list"><a href="/logout">ログアウト</a></li>
                 </ul>
-                    <img class="icon" src="images/icon1.png">
+                    <img class="header-icon prof-icon" src="{{'/storage/images/'.$user['images']}}">
                 <div>
             </div>
         </div>
@@ -43,32 +43,32 @@
             @yield('content')
         </div >
         <div id="side-bar">
-            <div id="confirm">
-                <p>{{$user["username"]}}さんの</p>
+            <div class="side-bar">
+                <p class="sb-name">{{$user["username"]}}さんの</p>
                 <div class="sb-container">
-                <p>フォロー数</p>
-                <?php  //フォロー・フォロワー人数計算用
-                $following_cnt = count($following);
-                $followed_cnt = count($followed);
-                ?>
-                <p>{{$following_cnt}}名</p>
+                    <?php  //フォロー・フォロワー人数計算用
+                        $following_cnt = count($following);
+                        $followed_cnt = count($followed);
+                    ?>
+                    <div class="sb-label">
+                        <p>フォロー数</p>
+                        <p>{{$following_cnt}}人</p>
+                    </div>
+                    <p class="btn text-button list-button"><a href="/follow-list">フォローリスト</a></p>
+                    <br>
+                    <div class="sb-label">
+                        <p>フォロワー数</p>
+                        <p>{{$followed_cnt}}人</p>
+                    </div>
+                    <p class="btn text-button list-button"><a href="/follower-list">フォロワーリスト</a></p>
                 </div>
-                <p class="btn text-button"><a href="/follow-list">フォローリスト</a></p>
-                <div class="sb-container">
-                <p>フォロワー数</p>
-                <p>{{$followed_cnt}}名</p>
-                </div>
-                <p class="btn text-button"><a href="/follower-list">フォロワーリスト</a></p>
-                <p class="btn text-button"><a href="/search">ユーザー検索</a></p>
+
+                <p class="btn text-button search-button"><a href="/search">ユーザー検索</a></p>
             </div>
         </div>
     </div>
     </div>
-    <footer>　<!-- 確認用 -->
-        <p>user_id：{{$user["id"]}}</p><br>
-        <p>user：{{$user["username"]}}</p>
-        <p>following：{{$following}}</p>
-        <p>followed：{{$followed}}</p>
+    <footer>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('js/script.js') }} "></script>

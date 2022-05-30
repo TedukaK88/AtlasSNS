@@ -44,6 +44,7 @@ body{
     background-color: #186AC9;
     border: 2px solid #186AC9;
     border-radius: 8px 8px 8px 8px;
+    cursor: pointer;
 }
 .text-button:hover{
     filter: brightness(1.2);
@@ -135,6 +136,8 @@ header{
 }
 #menu{
     display: flex;
+    position: relative;
+    top: -10%;
 }
 
 
@@ -146,19 +149,23 @@ header{
     padding: 8% 15px 0px 15px;
     color: white;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 .acd-trigger{
     display: none;
 }
 .acd-label{
     display: block;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
 }
 .accordion-menu{
     display: block;
     position: absolute;
-    top: 110px;
-    right: 0px;
+    width: 380px;
+    top: 84px;
+    right: -30px;
     transition: 0s;
     visibility: hidden;
 }
@@ -168,6 +175,8 @@ header{
 }
 .menu-list{
     position: relative;
+    height: 50px;
+    line-height: 50px;
     font-size: 2.0rem;
     letter-spacing: 0.1rem;
     text-align: center;
@@ -175,6 +184,10 @@ header{
     border: 1px rgb(30, 30, 140) solid; /*後で色味調整*/
     background-color: white;
     z-index: 3;
+    cursor: pointer;
+}
+.menu-list:hover{
+    filter: brightness(1.2);
 }
 .menu-list a{
     color: grey;
@@ -183,11 +196,14 @@ header{
     color: white;
     background-color: rgb(30, 30, 140);
 }
+.menu-list:nth-child(2n):hover{
+    filter: brightness(1.2);
+}
 .menu-list:nth-child(2n) a{
     color: white;
 }
 .header-icon{
-    padding: 0 15px 0 30px;
+    padding: 0 15px 0 10px;
 }
 
 

@@ -25,7 +25,7 @@
         <h1><a href="/post/index"><img src="/images/atlas.png" class="logo"></a></h1>
             <div id = "">
                 <div id = "menu">
-                    <p class="header-name">{{$user["username"]}}　さん</p>
+                    <p class="header-name">{{$user["username"]}}　 さん</p>
                     <input id="acd-trigger1" class="acd-trigger" type="checkbox">
                     <label class="acd-label" for="acd-trigger1">∨</label>
                 <ul class="accordion-menu">

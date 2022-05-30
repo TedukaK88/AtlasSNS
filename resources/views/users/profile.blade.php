@@ -114,9 +114,6 @@
     </div>
 </div>
 @endif
-<?php echo 'target_id: '.$target_id; echo'<br>';
-echo 'login user id: '.$user->id;
-?>
 
 
 @endsection

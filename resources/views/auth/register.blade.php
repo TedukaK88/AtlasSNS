@@ -4,23 +4,28 @@
 
 {!! Form::open() !!}
 
-<h2>新規ユーザー登録</h2>
+<h3>新規ユーザー登録</h3>
+<div class="form">
+    {{ Form::label('user name') }}
+    {{ Form::text('username',null,['class' => 'input']) }}
+</div>
+<div class="form">
+    {{ Form::label('mail address') }}
+    {{ Form::text('mail',null,['class' => 'input']) }}
+</div>
+<div class="form">
+    {{ Form::label('password') }}
+    {{ Form::text('password',null,['class' => 'input']) }}
+</div>
+<div class="form">
+    {{ Form::label('password confirm') }}
+    {{ Form::text('password_confirmation',null,['class' => 'input']) }}
+</div>
+<div class="button">
+{{ Form::submit('REGISTER',['class'=>'text-button']) }}
+</div>
 
-{{ Form::label('ユーザー名') }}
-{{ Form::text('username',null,['class' => 'input']) }}
-
-{{ Form::label('メールアドレス') }}
-{{ Form::text('mail',null,['class' => 'input']) }}
-
-{{ Form::label('パスワード') }}
-{{ Form::text('password',null,['class' => 'input']) }}
-
-{{ Form::label('パスワード確認') }}
-{{ Form::text('password_confirmation',null,['class' => 'input']) }}
-
-{{ Form::submit('登録') }}
-
-<p><a href="/login">ログイン画面へ戻る</a></p>
+<p class="back"><a href="/login">ログイン画面へ戻る</a></p>
 
 {!! Form::close() !!}
 

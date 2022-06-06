@@ -7,42 +7,43 @@
     <div class="post-container"> <!--class名仮置き-->
         <h2>Follow List</h2>
         <div class="icon-box">
-            @foreach($posts as $post)
-            <a href=""><img src="/storage/images/{{$post->images}}" class="icon in-box"></a>
+            @foreach($following_users as $following_user)
+            <a href=""><img src="/storage/images/{{$following_user->images}}" alt="{{$following_user->username}} さん" class="icon in-box"></a>
             @endforeach
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
-            <a href=""><img src="images/icon1.png" class="icon in-box"></a>    <!--  表示限界確認用ダミー -->
+            <!--  表示限界確認用ダミー -->
+            <!-- <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a>
+            <a href=""><img src="images/icon1.png" class="icon in-box"></a> -->
         </div>
     </div>
     <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------- -->

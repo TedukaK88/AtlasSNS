@@ -79,13 +79,14 @@ class PostsController extends Controller
         $following = \DB::table('follows')->select('following_id')->where('followed_id',$user["id"])->pluck('following_id'); //フォローしているユーザーIDの取得
         $followed = \DB::table('follows')->select('followed_id')->where('following_id',$user["id"])->pluck('followed_id'); //フォロワーのユーザーID取得
 
+        $following_users = \DB::table('users')->whereIn('id',$following)->get();    //フォローしているユーザーの情報取得
         $posts = \DB::table('posts')->select('posts.id','user_id','post','posts.updated_at','username','images')
         ->join('users','posts.user_id','=','users.id') //join(table,column,=,column)
         ->whereIn('user_id',$following)   //フォローユーザーのつぶやき取得
         ->orderBy('updated_at','DESC')    //つぶやきの更新が新しい順でソート
         ->get();
 
-        return view('posts.follow-list',compact('user','following','followed','posts'));
+        return view('posts.follow-list',compact('user','following','followed','following_users','posts'));
     }
 
     //  フォロワーリストページ表示
@@ -94,13 +95,14 @@ class PostsController extends Controller
         $following = \DB::table('follows')->select('following_id')->where('followed_id',$user["id"])->pluck('following_id'); //フォローしているユーザーIDの取得
         $followed = \DB::table('follows')->select('followed_id')->where('following_id',$user["id"])->pluck('followed_id'); //フォロワーのユーザーID取得
 
+        $followed_users = \DB::table('users')->whereIn('id',$followed)->get();    //フォローされているユーザーの情報取得
         $posts = \DB::table('posts')->select('posts.id','user_id','post','posts.updated_at','username','images')
         ->join('users','posts.user_id','=','users.id') //join(table,column,=,column)
         ->whereIn('user_id',$followed)   //フォローユーザーのつぶやき取得
         ->orderBy('updated_at','DESC')    //つぶやきの更新が新しい順でソート
         ->get();
 
-        return view('posts.follower-list',compact('user','following','followed','posts'));
+        return view('posts.follower-list',compact('user','following','followed','followed_users','posts'));
     }
 
 }

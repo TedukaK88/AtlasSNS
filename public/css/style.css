@@ -18,7 +18,7 @@ header{
 }
 #side-bar{
     flex: 0 0 19.5%;
-    height: 100vh;
+    min-height: 100vh;
     border-left: 1px solid #727272;
 }
 
@@ -150,6 +150,9 @@ header{
     color: white;
     font-weight: bold;
     font-size: 1.6rem;
+}
+.hide{
+    display: none;
 }
 .acd-trigger{
     display: none;
@@ -406,7 +409,7 @@ h2{
     height: 150px;
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid rgb(220, 220, 220);
+    border: 1px none rgb(220, 220, 220);
     overflow: scroll;
 }
 .icon-box::-webkit-scrollbar{
@@ -464,14 +467,35 @@ h2{
     width: 300px;
     margin: 20px 0px auto 40px;
 }
+/* Google Material Icons */
+
+.material-symbols-outlined.md-36 {
+    font-size: 1.2rem;
+    color: #FFF;
+    line-height: 1.4;
+    font-size: 36px;
+}
 
 /* ================================================================ */
 /* profile */
 /* ================================================================ */
 /*ログインユーザー*/
+.error_message{
+    width: 100%;
+}
+.error_message li{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+}
 .prof-container{
     padding-top: 5%;
-    padding-left: 17.5%;
+    padding-left: 27.5%;
+}
+.prof-container img{
+    position: absolute;
+    left: 15%;
 }
 .prof-list{
 }

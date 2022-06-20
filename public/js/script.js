@@ -1,3 +1,19 @@
+// =================  ハンバーガーメニューアイコン切り替え  =====================
+$(function (){
+    document.getElementById('acd-button').onclick = function(){
+        $('.acd-button1').toggleClass('hide');
+        // console.log("click");
+        if($('.acd-button1').hasClass('hide')){
+            // console.log("TRUE");
+            $('.acd-button2').removeClass('hide');
+        }else{
+            // console.log("FALSE");
+            $('.acd-button2').addClass('hide');
+        };
+        };
+});
+// ===========================================================================
+
 // ===========================  モーダル機能  =================================
 $(function () {
     $('.modalOpen').each(function(){

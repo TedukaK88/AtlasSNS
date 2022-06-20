@@ -7,52 +7,54 @@
 <!-- =============   ログインユーザーのプロフィールページの場合    =================================-->
 <!-- ========================================================================================== -->
     @foreach ($errors->all() as $error)
-    <li>{{$error}}</li>
+    <div class="error_message">
+        <li>{{$error}}</li>
+    </div>
     @endforeach
     <div class="prof-container">
     <img src="{{'/storage/images/'.$user['images']}}" class="prof-icon">
         <table class="prof-list">
-                <tr>
-                    <div class="prof-item">
+            <tr>
+                <div class="prof-item">
                     <p>user name</p>
                     {!! Form::open(['url' => '/profile/update' , 'files' => true]) !!}
                     {!! Form::hidden('id', "{$user->id}") !!}
                     {!! Form::textarea('username',"{$user->username}",['required','class'=>'prof-form','placeholder'=>'名前を入力してください。','rows'=>1,'minlength'=>2,'maxlength'=>12]) !!}
-                    </div>
-                </tr>
-                <tr>
-                    <div class="prof-item">
-                        <p>mail address</p>
-                            {!! Form::textarea('mail',"{$user->mail}",['required','class'=>'prof-form','placeholder'=>'メールアドレスを入力してください。','rows'=>1,'minlength'=>5,'maxlength'=>40]) !!}
-                        </div>
-                    </tr>
-                    <tr>
-                        <div class="prof-item">
-                        <p>password</p>
-                        {{Form::password('password', ['class' => 'prof-form','placeholder' => '英字のみ 8文字以上20文字以内','rows'=>1,'minlength'=>8,'maxlength'=>20])}}
-                        </div>
-                    </tr>
-                    <tr>
-                        <div class="prof-item">
-                            <p>password confirm</p>
-                            {{Form::password('password_confirmation', ['class' => 'prof-form','placeholder' => 'パスワードを再入力してください。','rows'=>1,'minlength'=>8,'maxlength'=>20])}}
-                        </div>
-                    </tr>
-                    <tr>
-                    <div class="prof-item">
-                        <p>bio</p>
-                        {!! Form::textarea('bio',"{$user->bio}",['class'=>'prof-form','placeholder'=>'150文字以内で入力してください。','rows'=>1,'minlength'=>1,'maxlength'=>150]) !!}
-                        </div>
-                    </tr>
-                    <tr>
-                    <div class="prof-item">
-                        <p>icon image</p>
-                        <input type='file' name='image' class='custom-file-input' id=fileImage accept='image/jpg,image/png,image/bmp,image/gif,image/svg'>
-                        </div>
-                    </tr>
-            </table>
-            <button type="submit" class="text-button red-button prof-submit" onclick="return confirm('この内容で更新してよろしいですか？')">更新</button>
-            {!! Form::close() !!}
+                </div>
+            </tr>
+            <tr>
+                <div class="prof-item">
+                    <p>mail address</p>
+                    {!! Form::textarea('mail',"{$user->mail}",['required','class'=>'prof-form','placeholder'=>'メールアドレスを入力してください。','rows'=>1,'minlength'=>5,'maxlength'=>40]) !!}
+                </div>
+            </tr>
+            <tr>
+                <div class="prof-item">
+                     <p>password</p>
+                     {{Form::password('password', ['class' => 'prof-form','placeholder' => '英字のみ 8文字以上20文字以内','rows'=>1,'minlength'=>8,'maxlength'=>20])}}
+                </div>
+            </tr>
+            <tr>
+                <div class="prof-item">
+                    <p>password confirm</p>
+                    {{Form::password('password_confirmation', ['class' => 'prof-form','placeholder' => 'パスワードを再入力してください。','rows'=>1,'minlength'=>8,'maxlength'=>20])}}
+                </div>
+            </tr>
+            <tr>
+                <div class="prof-item">
+                    <p>bio</p>
+                    {!! Form::textarea('bio',"{$user->bio}",['class'=>'prof-form','placeholder'=>'150文字以内で入力してください。','rows'=>1,'minlength'=>1,'maxlength'=>150]) !!}
+                </div>
+            </tr>
+            <tr>
+                <div class="prof-item">
+                    <p>icon image</p>
+                    <input type='file' name='image' class='custom-file-input' id=fileImage accept='image/jpg,image/png,image/bmp,image/gif,image/svg'>
+                </div>
+            </tr>
+        </table>
+        <button type="submit" class="text-button red-button prof-submit" onclick="return confirm('この内容で更新してよろしいですか？')">更新</button>
+        {!! Form::close() !!}
     </div>
 
 @else

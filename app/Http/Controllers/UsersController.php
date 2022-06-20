@@ -35,6 +35,7 @@ class UsersController extends Controller
     //-------------------------------------------------------------------------
     //   プロフィール更新
     public function prof_update(Request $request){
+        $user_id = $request->id;
         //validate
         $rules = [
             'username' => 'required|string|min:2|max:255',
@@ -47,7 +48,7 @@ class UsersController extends Controller
         //フォーム入力に問題がある場合
         if($validator->fails()){
             // dd($request);
-            return redirect('/profile')
+            return redirect('/profile/'.$user_id)
             ->withErrors($validator) // Validatorインスタンスの値を$errorsへ保存
             ->withInput(); // 送信されたフォームの値をInput::old()へ引き継ぐ
         //-------------------------------------------------------------------------
@@ -61,25 +62,31 @@ class UsersController extends Controller
         //-------------------------------------------------------------------------
         //image 処理とアップデート処理
         if(request('image')){
-        //image がアップされた場合の処理
+        //image がアップされた場合のバリデーション処理
             // dd($request);
+            //ファイル名を取得　→　preg_matchで半角英数字か判別　→　DBをupdate or 元のページに戻す
             $image_name=request()->file('image')->getClientOriginalName();
-            request()->file('image')->move('storage/images',$image_name);
-            \DB::table('users')
-            ->where('id',$id)
-            ->update(
-                ['images'=>$image_name]
-            );
-        }else{
-        //共通のアップデート処理
+            if(preg_match('/^[a-zA-Z0-9]+....$/',$image_name)){
+                request()->file('image')->move('storage/images',$image_name);
+                \DB::table('users')
+                ->where('id',$id)
+                ->update(
+                    ['images'=>$image_name]
+                );
+            }else{
+                return redirect('/profile/'.$user_id)
+                ->withErrors('プロフィール画像のファイル名は英数字のみにしてください。') // Validatorインスタンスの値を$errorsへ保存
+                ->withInput(); // 送信されたフォームの値をInput::old()へ引き継ぐ
+            }
+        }
+        //共通のDBアップデート処理
         \DB::table('users')
         ->where('id',$id)
         ->update(
             ['username' => $username,'mail' => $mail,'password' => $password,'bio' => $bio]
-        );}
+        );
         //-------------------------------------------------------------------------
-        $user_id = $request->id;
-        return redirect('/profile/'.$user_id);
+        return redirect('/post/index');
         }
     }
     //=============================================================================================================================

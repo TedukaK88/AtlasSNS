@@ -7,7 +7,11 @@
         <form action="/search_result" method="GET">
             <input class="search-form" type="text" id="keyword" name="keyword" placeholder="　ユーザー名">
             <!-- <button type="submit" class="search-button"></button> -->
-            <input type="submit" class="search-form-button" value="🔍">
+            <button type="submit" class="search-form-button">
+                <span class="material-symbols-outlined md-36">
+                    search
+                </span>
+            </button>
         </form>
         <?php if(isset($keyword)){
         echo '<p class="search-word">検索ワード：';

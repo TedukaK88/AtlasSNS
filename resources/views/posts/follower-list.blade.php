@@ -8,7 +8,7 @@
         <h2>Follow List</h2>
         <div class="icon-box">
             @foreach($followed_users as $followed_user)
-            <a href=""><img src="/storage/images/{{$followed_user->images}}" alt="{{$followed_user->username}} さん" class="icon in-box"></a>
+            <a href="/profile/{{$followed_user->id}}"><img src="/storage/images/{{$followed_user->images}}" alt="{{$followed_user->username}} さん" class="icon in-box"></a>
             @endforeach
             <!--  表示限界確認用ダミー -->
             <!-- <a href=""><img src="images/icon1.png" class="icon in-box"></a>    
@@ -53,7 +53,7 @@
         @foreach($posts as $post)
         <li class="post-block">
           <div class="post-list-left-space"></div>
-              <figure><img src="/storage/images/{{$post->images}}" class="icon">
+              <figure><a href="/profile/{{$post->user_id}}"><img src="/storage/images/{{$post->images}}" class="icon"></a>
               </figure>
 
               <div class="post-content">

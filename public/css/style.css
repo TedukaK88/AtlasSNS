@@ -480,14 +480,16 @@ h2{
 /* profile */
 /* ================================================================ */
 /*ログインユーザー*/
-.error_message{
+.error-message{
+    padding-top: 30px;
     width: 100%;
 }
-.error_message li{
+.error-message li{
+    padding-left: 27.5%;
     font-size: 1.8rem;
     font-weight: bold;
     color: red;
-    text-align: center;
+    text-align: left;
 }
 .prof-container{
     padding-top: 5%;

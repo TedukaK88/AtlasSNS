@@ -6,11 +6,11 @@
 <!-- ========================================================================================== -->
 <!-- =============   ログインユーザーのプロフィールページの場合    =================================-->
 <!-- ========================================================================================== -->
+    <div class="error-message">
     @foreach ($errors->all() as $error)
-    <div class="error_message">
         <li>{{$error}}</li>
-    </div>
     @endforeach
+    </div>
     <div class="prof-container">
     <img src="{{'/storage/images/'.$user['images']}}" class="prof-icon">
         <table class="prof-list">

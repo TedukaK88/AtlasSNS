@@ -24,6 +24,11 @@
     <h1><img src="images/atlas.png"></h1>
     <p>Social Network Service</p>
   </header>
+  <div class="error-message">
+  @foreach ($errors->all() as $error)
+        <li>{{$error}}</li>
+  @endforeach
+  </div>
   <div id="container">
     @yield('content')
   </div>

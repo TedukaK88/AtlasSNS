@@ -20,7 +20,7 @@
         @foreach($posts as $post)
         <li class="post-block">
           <div class="post-list-left-space"></div>
-              <figure><a href="/profile/{{$post->user_id}}"><img src="/storage//images/{{$post->images}}" class="icon"></a>
+              <figure><a href="/profile/{{$post->user_id}}"><img src="/storage//images/{{$post->images}}" class="prof-icon"></a>
               </figure>
 
               <div class="post-content">

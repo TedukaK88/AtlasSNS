@@ -66,7 +66,7 @@ class UsersController extends Controller
             // dd($request);
             //ファイル名を取得　→　preg_matchで半角英数字か判別　→　DBをupdate or 元のページに戻す
             $image_name=request()->file('image')->getClientOriginalName();
-            if(preg_match('/^[a-zA-Z0-9]+....$/',$image_name)){
+            if(preg_match('/^[a-zA-Z0-9]+.....$/',$image_name)){
                 request()->file('image')->move('storage/images',$image_name);
                 \DB::table('users')
                 ->where('id',$id)

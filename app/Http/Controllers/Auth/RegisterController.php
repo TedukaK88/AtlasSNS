@@ -77,12 +77,24 @@ class RegisterController extends Controller
 
     public function register(Request $request){
         if($request->isMethod('post')){
+            $rules = [
+                'username' => 'required|string|min:2|max:12',
+                'mail' => 'required|string|email|min:5|max:255|unique:users',
+                'password' => 'required|string| regex:/^[a-zA-Z0-9]+$/ |min:4|max:20|confirmed',
+            ];
+            $validator = Validator::make($request->all(),$rules);
+            if($validator->fails()){
+                return redirect('/register')
+            ->withErrors($validator) // Validatorインスタンスの値を$errorsへ保存
+            ->withInput(); // 送信されたフォームの値をInput::old()へ引き継ぐ
+            }else{
             $data = $request->input();
             $name = $request->username;
             // DD($name);
 
             $this->create($data);
             return view('auth.added',['name'=>$name]);
+            }
         }
         return view('auth.register');
     }
